@@ -1,0 +1,32 @@
+sudo: required
+dist: trusty
+addons:
+  artifacts:
+    paths:
+      - results
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+language: node_js
+node_js:
+  - '7'
+cache:
+  directories:
+    - node_modules
+    - bower_components
+    - $HOME/.npm
+    - $HOME/.cache
+before_script:
+  - npm install
+before_deploy:
+  - npm run build
+env:
+  global:
+    - NODE_ENV=testing
+    - ARTIFACTS_BUCKET=js-tasks-ru
+script:
+  - npm run test
+notifications:
+  webhooks: 'http://learn.javascript.ru/automation/ci/build'
