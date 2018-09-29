@@ -140,3 +140,4 @@ teacher.karma.conf.js
 .DS_Store
 
 package-lock.json
+*.bat
