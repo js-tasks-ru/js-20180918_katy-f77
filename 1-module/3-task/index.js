@@ -34,16 +34,16 @@ function getMinMax(str) {
 
 function tryToAssignMax(value, newValue)
 {
-    return (value == undefined || value < newValue) ? newValue : value;
+    return (value === undefined || value < newValue) ? newValue : value;
 }
 
 function tryToAssignMin(value, newValue)
 {
-    return (value == undefined || value > newValue) ? newValue : value;
+    return (value === undefined || value > newValue) ? newValue : value;
 }
 
 function isString(value) {
     
-    return typeof value == "string";
+    return typeof value === "string";
 }
 
