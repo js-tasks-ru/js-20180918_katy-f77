@@ -36,5 +36,5 @@ function find (obj, value)
 
 function isObject(value)
 {
-    return value != null && typeof value === "object";
+    return value !== null && typeof value === "object";
 }
