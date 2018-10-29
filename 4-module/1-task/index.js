@@ -12,7 +12,7 @@ function makeFriendsList (friends) {
     for (let friend of friends){
 
         let friendElement = document.createElement("li");
-        friendElement.innerText = friend.firstName + " " + friend.lastName;
+        friendElement.textContent = friend.firstName + " " + friend.lastName;
         friendList.appendChild(friendElement);
     }
 
