@@ -17,8 +17,8 @@ function getMinMax(str) {
     {
         if (!isNaN(value))
         {
-            max = tryToAssignMax(max, value);
-            min = tryToAssignMin(min, value);
+            max = getMax(max, value);
+            min = getMin(min, value);
             str = str.slice(value.toString().length);
         }
         else
@@ -32,12 +32,12 @@ function getMinMax(str) {
     return { min:min, max:max };
 }
 
-function tryToAssignMax(value, newValue)
+function getMax(value, newValue)
 {
     return (value === undefined || value < newValue) ? newValue : value;
 }
 
-function tryToAssignMin(value, newValue)
+function getMin(value, newValue)
 {
     return (value === undefined || value > newValue) ? newValue : value;
 }
