@@ -9,4 +9,18 @@
  */
 function makeLogging(fn, log) {
 
+    return function(){
+
+        let _this = this;
+        let args = [];
+
+        for (let i = 0; i < arguments.length; i++ )
+        {
+            args.push(arguments[i]);
+        }
+
+        log.push(args);
+
+        return fn.apply(_this, arguments);
+    }
 }
