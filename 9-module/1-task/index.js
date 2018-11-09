@@ -6,6 +6,9 @@
  * @param {Function} Parent - родительский класс
  */
 function extendClass(Main, Parent) {
+    
+    Main.prototype = Object.create(Parent.prototype);
+    Main.prototype.constructor = Main;
     // здесь ваш код наследования
 }
 
