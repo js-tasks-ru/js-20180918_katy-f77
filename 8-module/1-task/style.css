@@ -7,5 +7,5 @@ td {
 }
 
 .sorted.desc::before {
-    content: 'V '
+    content: 'v '
 }
