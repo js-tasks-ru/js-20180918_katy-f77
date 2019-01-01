@@ -80,7 +80,7 @@
             tooltipElem.style.left = holderRect.left + pageXOffset + "px";
             let text = holderElem.dataset.tooltip;
             tooltipElem.textContent = text;
-            tooltipElem.classList.add("tooltip_active");
+            tooltipElem.classList.toggle("tooltip_active", true);
             let tooltipFullHeight = tooltipElem.getBoundingClientRect().height + indent;
             let dy = (holderRect.top - tooltipFullHeight > 0) ? (-tooltipFullHeight) : (holderRect.height + indent);
             tooltipElem.style.top = holderRect.top + pageYOffset + dy + "px";
@@ -88,10 +88,7 @@
 
         static hideTooltip(tooltipElem) {    
 
-            if (tooltipElem.classList.contains("tooltip_active"))
-            {
-                tooltipElem.classList.remove("tooltip_active");
-            }
+            tooltipElem.classList.toggle("tooltip_active", false);
         }
     }
 
